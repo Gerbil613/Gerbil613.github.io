@@ -1,1 +1,111 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        /* --- CSS VARIABLES (Same as Index) --- */
+        :root {
+            --primary-blue: #0ea5e9;
+            --dark-blue: #0369a1;
+            --light-bg: #f0f9ff;
+            --white: #ffffff;
+            --text-color: #334155;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* --- GLOBAL RESET --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-main); background-color: var(--light-bg); color: var(--text-color); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+        }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-blue); }
+        .nav-links { list-style: none; display: flex; gap: 2rem; }
+        .nav-links a { font-weight: 500; color: var(--text-color); transition: color 0.3s ease; }
+        .nav-links a:hover { color: var(--primary-blue); }
+
+        /* --- ABOUT SECTION STYLES --- */
+        .container { max-width: 800px; margin: 0 auto; padding: 4rem 1rem; }
+        
+        .profile-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            background-color: #cbd5e1; /* Gray placeholder */
+            border-radius: 50%;
+            margin: 0 auto 1.5rem auto;
+            border: 4px solid var(--primary-blue);
+            object-fit: cover;
+        }
+
+        .bio-text {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h1 { color: var(--dark-blue); margin-bottom: 1rem; }
+        p { margin-bottom: 1.5rem; }
+
+        /* --- FOOTER --- */
+        footer { text-align: center; padding: 2rem; background-color: var(--white); color: #94a3b8; margin-top: 2rem; border-top: 1px solid #e2e8f0; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MyName's Blog</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="profile-header">
+            <img src="https://via.placeholder.com/150" alt="Profile Photo" class="profile-img">
+            <h1>Hi, I'm [Your Name]</h1>
+            <p>Welcome to my personal website.</p>
+        </div>
+
+        <div class="bio-text">
+            <h2>My Story</h2>
+            <p>
+                Hello! This is the place where you can write a little bit about yourself. 
+                Whether you are a developer, a writer, or just someone who loves sharing ideas, 
+                this is your space to introduce yourself to the world.
+            </p>
+            <p>
+                You can edit this text in the <code>about.html</code> file to say whatever you want.
+                Talk about your hobbies, your career, or why you started this blog.
+            </p>
+            <h2>Contact Me</h2>
+            <p>You can reach me at: <strong>email@example.com</strong></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Name. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
