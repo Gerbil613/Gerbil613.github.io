@@ -102,7 +102,7 @@ sup a {
 }
 
 .cyan-link {
-    color: rgb(0, 208, 255);
+    color: rgb(0, 144, 201);
     text-decoration: underline;
     transition: opacity 0.2s ease;
 }
