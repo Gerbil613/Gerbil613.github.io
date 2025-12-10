@@ -4,122 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
-    <style>
-        /* --- CSS VARIABLES --- */
-        :root {
-            --primary-blue: #0ea5e9;
-            --dark-blue: #0369a1;
-            --light-bg: #f0f9ff;
-            --white: #ffffff;
-            --text-color: #334155;
-            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        /* --- GLOBAL RESET --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-main); background-color: var(--light-bg); color: var(--text-color); line-height: 1.6; }
-        a { text-decoration: none; color: inherit; }
-
-        /* --- NAVIGATION --- */
-        nav {
-            background-color: var(--white);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-        }
-        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-blue); }
-        .nav-links { list-style: none; display: flex; gap: 2rem; }
-        .nav-links a { font-weight: 500; color: var(--text-color); transition: color 0.3s ease; }
-        .nav-links a:hover { color: var(--primary-blue); }
-
-        /* --- BLOG LIST STYLES --- */
-        .container { max-width: 800px; margin: 0 auto; padding: 4rem 1rem; }
-        
-        .page-title { text-align: center; margin-bottom: 3rem; color: var(--dark-blue); }
-
-        .blog-post {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            border-left: 5px solid transparent;
-        }
-
-        .blog-post:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-            border-left: 5px solid var(--primary-blue);
-        }
-
-        .blog-date {
-            color: #94a3b8;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .blog-post h2 {
-            margin-bottom: 1rem;
-            color: var(--dark-blue);
-        }
-
-        .read-more {
-            display: inline-block;
-            margin-top: 1rem;
-            color: var(--primary-blue);
-            font-weight: 600;
-        }
-
-        /* --- FOOTER --- */
-        footer { text-align: center; padding: 2rem; background-color: var(--white); color: #94a3b8; margin-top: 2rem; border-top: 1px solid #e2e8f0; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <div class="logo">MyName's Blog</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="blog.html">Blog</a></li>
-        </ul>
-    </nav>
+<div id="navbar-placeholder"></div>
 
-    <main class="container">
-        <h1 class="page-title">Latest Articles</h1>
+<main class="container">
+    <h1 class="why-gaza-spelled-g">Latest Articles</h1>
 
+    <a href="why_gaza_spelled_g.html" style="text-decoration: none; color: inherit;">
         <article class="blog-post">
-            <span class="blog-date">October 15, 2024</span>
-            <h2>Getting Started with Web Development</h2>
-            <p>This is a short preview of the blog post. In this article, we discuss the basics of HTML, CSS, and how to deploy your first site...</p>
-            <a href="#" class="read-more">Read Article &rarr;</a>
+            <span class="blog-date">December 9, 2025</span>
+            <h2>Why does Gaza start with a <em>g</em>?</h2>
+            <p>A brief exploration of comparative Semitic phonology as it pertains to Biblical place-names.</p>
+            <span class="read-more">Read Article &rarr;</span>
         </article>
-
-        <article class="blog-post">
-            <span class="blog-date">September 22, 2024</span>
-            <h2>My Favorite Tools for Productivity</h2>
-            <p>Staying organized can be tough. Here is a list of the software and techniques I use to keep my life on track.</p>
-            <a href="#" class="read-more">Read Article &rarr;</a>
-        </article>
-
-        <article class="blog-post">
-            <span class="blog-date">August 05, 2024</span>
-            <h2>Why I Started This Blog</h2>
-            <p>Every journey begins with a single step. Here is the story behind why I decided to create this platform.</p>
-            <a href="#" class="read-more">Read Article &rarr;</a>
-        </article>
+    </a>
 
     </main>
 
     <footer>
-        <p>&copy; 2024 My Name. All rights reserved.</p>
+        <p>&copy; 2025 Matan Yablon. All rights reserved.</p>
     </footer>
 
 </body>
 </html>
+
+<script>
+    // 1. Fetch the navbar.html file
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            // 2. Insert it into the placeholder div
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+</script>

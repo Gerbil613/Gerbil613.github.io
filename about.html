@@ -71,18 +71,11 @@
 </head>
 <body>
 
-    <nav>
-        <div class="logo">Mati's Blog</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="blog.html">Blog</a></li>
-        </ul>
-    </nav>
+<div id="navbar-placeholder"></div>
 
     <main class="container">
         <div class="profile-header">
-            <img src="https://via.placeholder.com/150" alt="Profile Photo" class="profile-img">
+            <img src="profile_pic.JPG" alt="Profile Photo" class="profile-img">
             <h1>Hi, I'm Mati</h1>
             <p>Welcome to my personal website.</p>
         </div>
@@ -110,3 +103,13 @@
 
 </body>
 </html>
+
+<script>
+    // 1. Fetch the navbar.html file
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            // 2. Insert it into the placeholder div
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+</script>
