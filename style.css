@@ -136,3 +136,28 @@ sup a {
 
 /* --- 8. FOOTER --- */
 footer { text-align: center; padding: 2rem; background-color: var(--white); color: #94a3b8; margin-top: 2rem; border-top: 1px solid #e2e8f0; }
+
+/* --- BLOCKQUOTE STYLING --- */
+blockquote {
+    background: #f8fafc;        /* Very light gray/blue background */
+    border-left: 5px solid var(--primary-blue); /* The blue accent line */
+    margin: 2rem 0;             /* Space above and below */
+    padding: 1.5rem 2rem;       /* Space inside the box */
+    border-radius: 0 8px 8px 0; /* Rounded corners on the right side */
+    font-style: italic;         /* Classic quote style */
+    color: #475569;             /* Slightly lighter text color */
+    position: relative;
+}
+
+/* Optional: Add a "Source" label styling */
+blockquote footer {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--dark-blue);
+    font-style: normal;
+    font-weight: 600;
+}
+
+blockquote footer::before {
+    content: "— "; /* Adds an em-dash before the name */
+}
