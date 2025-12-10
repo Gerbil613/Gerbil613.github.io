@@ -135,7 +135,7 @@ sup a {
 @media (max-width: 500px) { .course-desc { margin-left: 0; margin-top: 0.5rem; } }
 
 /* --- 8. FOOTER --- */
-footer { text-align: center; padding: 2rem; background-color: var(--white); color: #94a3b8; margin-top: 2rem; border-top: 1px solid #e2e8f0; }
+footer { text-align: left; padding: 2rem; background-color: var(--white); color: #94a3b8; margin-top: 2rem; border-top: 1px solid #e2e8f0; }
 
 /* --- BLOCKQUOTE STYLING --- */
 blockquote {
@@ -151,13 +151,50 @@ blockquote {
 
 /* Optional: Add a "Source" label styling */
 blockquote footer {
-    margin-top: 1rem;
+    margin-top: 0.1rem;
     font-size: 0.9rem;
     color: var(--dark-blue);
     font-style: normal;
     font-weight: 600;
 }
 
+blockquote p:last-of-type {
+    margin-bottom: 0;
+}
+
 blockquote footer::before {
     content: "— "; /* Adds an em-dash before the name */
+}
+
+.post-img {
+    max-width: 100%;       /* Prevents image from being wider than the text */
+    height: auto;          /* Maintains aspect ratio */
+    display: block;        /* Allows us to center it */
+    margin: 2rem auto;     /* Centers image and adds vertical space */
+    border-radius: 8px;    /* Matches your rounded corners theme */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Adds a subtle pop */
+}
+
+/* Styling the caption text */
+figcaption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #64748b; /* Gray text */
+    margin-top: -1.5rem; /* Pulls it closer to the image */
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+/* --- RIGHT-ALIGNED QUOTE, LEFT-ALIGNED FOOTER --- */
+.quote-right {
+    text-align: right;             /* Aligns the main quote text to the right */
+    border-left: none;             /* Removes the standard left border */
+    border-right: 5px solid var(--primary-blue); /* Adds the border on the right */
+    border-radius: 8px 0 0 8px;    /* Flips the rounded corners */
+}
+
+.quote-right footer {
+    text-align: left;              
+    display: block;                
+    margin-top: 0.1rem;  /* Match the small spacing here */
 }

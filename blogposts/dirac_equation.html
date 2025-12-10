@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When something very small moves very fast</title>
+    <link rel="icon" type="image/png" href="profile_pic.JPG">
+    <link rel="stylesheet" href="../style.css">
+    <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+
+    <article class="article-container">
+        <h1>When something very small moves very fast</h1>
+        <span class="date">December 10, 2025</span>
+
+        <h2>Breaking the Schroedinger Equation</h2>
+        
+        <p>Many people, not just physics students, have encountered the all-important Schroedinger equation, which describes the time evolution of a quantum wavefunction:</p>
+
+        $$i\frac{\partial\psi}{\partial t}=\hat H \psi.$$
+
+        <p>That's all well and good, but what if we try to incorporate Einstein's special relativity into the fold? Can the Schroedinger equation consistently accomodate quantum particles moving at relativistic velocities? In that case, we need to enforce Lorentz invariance: all laws of physics must appear the same regardless of inertial reference. For the Schroedinger equation, we note immediately that space and time are on different "footing," so to speak. Time is under a first derivative, while space is under a second derivative, as the Hamiltonian of, say, a particle in a potential is $\hat H=-\frac{\hbar^2}{2m}\nabla^2+V(\vec x)$.</p>
+
+        <p>
+            Indeed, we can show more conclusively the lack of Lorentz invariance of the Schroedinger equation as follows. Suppose we exist only in the $x$-direction with no potential, and apply a Lorentz boost in that direction. We henceforth use natural units where $\hbar=c=1$. Starting with $$i\frac{\partial\psi}{\partial t}=-\frac{1}{2m}\frac{\partial^2\psi}{\partial x^2},$$ we apply a Lorentz boost $$\Lambda=\begin{bmatrix}\gamma & -\gamma v \\ -\gamma v & \gamma\end{bmatrix}$$where $\gamma=1/\sqrt{1-v^2}$ is the boost's Lorentz factor.
+        </p>
+
+        <p>
+            This gives $$\begin{align*}t'&=\gamma t-\gamma v x,\\x'&=\gamma x-\gamma v t.\end{align*}$$
+        </p>
+
+        <p>
+            Using the chain rule, we find for time $$\frac{\partial\psi}{\partial t}=\frac{\partial\psi}{\partial t'}\frac{\partial t'}{\partial t}+\frac{\partial\psi}{\partial x'}\frac{\partial x'}{\partial t}=\frac{\partial\psi}{\partial t'}\gamma+\frac{\partial\psi}{\partial x'}(-\gamma v).$$
+        </p>
+
+        <p>
+            For space, we find $$\frac{\partial\psi}{\partial x}=\frac{\partial\psi}{\partial t'}\frac{\partial t'}{\partial x}+\frac{\partial\psi}{\partial x'}\frac{\partial x'}{\partial x}=\frac{\partial\psi}{\partial t'}(-\gamma v)+\frac{\partial\psi}{\partial x'}\gamma,$$
+            
+            so 
+            
+            $$\frac{\partial^2\psi}{\partial x^2}=\gamma\frac{\partial}{\partial x}\frac{\partial \psi}{\partial x'}-\gamma v\frac{\partial}{\partial x}\frac{\partial \psi}{\partial t'},$$
+
+            eventually giving
+
+            $$\frac{\partial^2\psi}{\partial x^2}=\gamma^2\frac{\partial^2\psi}{\partial x'^2}-2\gamma^2v\frac{\partial^2\psi}{\partial x'\partial t'}+\gamma^2v^2\frac{\partial^2\psi}{\partial t'^2}.$$
+        </p>
+
+        <p>
+            Plugging back into the Schrodinger equation yields a mess:
+
+            $$i\Big(\frac{\partial\psi}{\partial t'}-v\frac{\partial\psi}{\partial x'}\Big)=-\frac{\gamma}{2m}\Big(\frac{\partial^2\psi}{\partial x'^2}-2 v\frac{\partial^2\psi}{\partial x'\partial t'}+ v^2\frac{\partial^2\psi}{\partial t'^2}\Big).$$
+
+            While the equation is exclusively composed of primed coordinates, it clearly does not take the same form as in the unprimed coordinates; there are cross-derivatives between time and space floating around. This Lorentz invariance has to do with the fact that time was only under a first derivative while space was under a second derivative. If instead time was under a second derivative too and we tweaked the coefficients to give a true, classical wave equation, we would have a transformed equation that looks like the original. A true wave equation is Lorentz invariant; for example, Maxwell's equations.
+        </p>
+
+        <h2>A new equation for the ages</h2>
+
+        <p>
+            Schroedinger himself was viscerally aware of this problem. Ultimately, Paul Dirac would be the one to crack the case in 1928, opening the door to the development of quantum field theory, and with it, all of modern physics. Dirac derived his equation as follows.
+        </p>
+
+        <p>
+            Starting with the result from special relativity that $m^2=E^2+|\vec p|^2$, or $E^2-|\vec\ p|^2-m^2=p^{\mu}p_{\mu}-m^2=0$, we factor this equation as $(\beta^{\kappa}p_{\kappa}+m)(\gamma^{\lambda}p_{\lambda}-m)=0.$ If we just assumed $\beta^{\kappa}$ and $\gamma^{\lambda}$ were numbers, we'd run into contradictions pretty quickly. It can be shown that $\gamma^{\kappa}=\beta^{\kappa}$ and that $\{\gamma^{\mu},\gamma^{\nu}\}=2g^{\mu\nu}\mathbb{I}$, where $g$ is the metric tensor from relativity, $\mathbb I$ is the abstract linear identity operator, and $\{A,B\}\equiv AB+BA$ denotes anticommutation.
+        </p>
+            
+        <p>It turns out the simplest mathematical object that can satisfy these relations are four-by-four matrices. The representations of these matrices are not unique, and in the "chiral representation" they are chosen as $$\begin{align*}\gamma^0&=\begin{bmatrix}0 & \mathbb{I} \\ \mathbb{I} &0\end{bmatrix},\\
+            \gamma^i&=\begin{bmatrix}0 & \sigma_i \\ -\sigma_i &0\end{bmatrix}\end{align*},$$ for $i\in\{1,2,3\}$, and $\sigma_i$ being the famed Pauli matrices.
+        </p>
+
+        <p>
+            Going back to our factorization, we can just set one of the terms to zero, $\gamma^{\mu}p_{\mu}-m=0$. Promoting the $p_{\mu}\rightarrow i\delta_{\mu}$ four-vector to an operator as in normal quantum mechanics, $$\boxed{(i\gamma^{\mu}\delta_{\mu}-m)\psi=0}.$$
+        </p>
+
+        <p>
+            This beautiful equation is manifestly Lorentz invariant, as it only contains constants and dot products of four-vectors.
+        </p>
+
+        <h2>
+            Implications
+        </h2>
+
+        <p>Note that $\psi$, the object of interest, has four degrees of freedom. This is a bit unexpected. At most, for an electron, we might expect two degrees of freedom, for the two spin states. Indeed, it turns out that the two other degrees of freedom correspond to <em>antimatter</em>! The four entries in $\psi$ are thus, in some basis, electron-up, electron-down, positron-up, and positron-down. Thus, we see that the existence of antimatter stems directly from the enforcement of Lorentz invariants on fermions (e.g. electrons). In this sense, Dirac predicted the existence of antimatter in 1928 before it was ever observed.</p>
+
+                <a href="blog.html" class="back-link">&larr; Back to all posts</a>
+
+</div>
+    </article>
+
+</body>
+</html>
+
+<script>
+    // 1. Fetch the navbar.html file
+    fetch('../navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            // 2. Insert it into the placeholder div
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+</script>
