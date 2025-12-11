@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When something very small moves very fast</title>
+    <link rel="icon" type="image/png" href="profile_pic.JPG">
+    <link rel="stylesheet" href="../style.css">
+    <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+
+    <article class="article-container">
+        <h1>An alien puzzle and CP violation</h1>
+        <span class="date">December 11, 2025</span>
+
+        <h2>A puzzle</h2>
+
+        <p>Let's start off with a thought experiment, adapted from the epic Feynman Lectures. Or perhaps more accurately, a puzzle. Suppose you are communicating with aliens from outer space. You cannot see them and they cannot see you; they can only send you verbal messages and vice versa. They have developed the same scientific progress as us, so they know chemistry, physics, etc. Here's your challenge: <em>can you explain to them which way is right and which way is left?</em></p>
+
+        <p>
+            After thinking about it for five or so seconds, you realize it's nontrivial. The aliens don't have the same conventions we do; you cannot simply refer to a "right" hand, for example. But the aliens know physics! So maybe you try to exploit something there. You recall that right-hand-rules for electromagnetism. You try telling the alien to run current with some charge down a wire, away from yourself. You know by the right-hand rule that the $\vec B$ field on top of the wire points to the right. So the alien just needs to measure this $\vec B$ field, and you're done! Right?
+        </p>
+
+        <p>
+            Not so fast. It turns out that there is no way for the alien to measure this $\vec B$ field and thereby independently resolve the difference between right and left. This comes down to the fact that the $\vec B$ field is a <em>pseudovector</em>. This means that the direction of the $\vec B$ vector is, in some sense, arbitrary and unphysical.
+        </p>
+
+        <p>
+            How does this arbitrariness manifest itself in our wire scheme? Well, how do you actually measure a $\vec B$ field? You have to put a charged particle in it. Suppose the alien is instructed to put a particle of the same charge as the current in the $\vec B$ field, moving in the same direction as the current. The particle will feel an <em>upward</em> force&mdash;no good! That doesn't allow us to resolve left versus right.
+        </p>
+
+        <p>
+            What's happening intuitively is that the right-hand-rule "undoes" itself. We used the right-hand-rule to jump from the current to the $\vec B$ field, but then we have to use it again to jump from the $\vec B$ field to the Lorentz force on the charge. We could have used the left-hand-rule both times and gotten the same physical answer.
+        </p>
+
+        <p>So can we tell the aliens left versus right?</p>
+
+        <h2>Flipping there and back again</h2>
+
+        <p>The answer until 1956 was <em>no</em>. The problem has to do with something called <em>parity</em> symmetry in physics. The parity operation is defined as inverting an odd (one or three) number of spatial dimensions. For instance, if we perform a parity operation, all velocities flip. Electric fields $\vec E$ also flip. But get this: $\vec B$ fields <em>don't</em>. They are totally invariant to parity operations, so they are said to have parity eigenvalue $1$ (in contrast to $-1$). This feature is what makes them definitionally <em>pseudovectors</em> or <em>axial vectors.</em></p>
+
+        <p>Until 1956, it was thought (with good, nay, excellent reason) that the laws of physics obeyed parity symmetry. That is, if a parity operation was applied on the universe, the laws of physics would remain unchanged. This would be a result of the fact that all laws of physics consist of equations such that each equation exclusively involves vectors or exclusively involves pseudovectors. Thus, under parity, vector equations would get a negative sign on both sides, which would cancel out, and the pseudovector equations remain the same as well. Indeed, any classical law you can think of, ranging from Newton's laws of motion to Maxwell's equations, exhibit parity symmetry.</p>
+
+        <p>
+            In 1956, the Wu experiment changed all that. Chien-Shiung Wu led an experiment at the National Bureau of Standards which found an experiment that violated parity symmetry. But what were the new laws of physics that didn't obey parity?
+        </p>
+
+        <h2>The Weak Interaction and parity violation</h2>
+
+        <p>Famously, there are four fundamental forces in physics: electromagnetic, weak, strong, and gravity. The electromagnetic interaction respects parity symmetry, as does gravity. The strong force respects parity as well, though as it turns out this is a huge can of worms and theory would have greatly favored for the strong force to violate parity. More on that another day.</p>
+
+        <p>So how does the weak force violate parity? In fact, we will explain how it violates <em>CP</em>, which is the operation of flipping an odd number of axes and flipping all charges. In the process, the reason why the weak force also violates P will be mentioned.</p>
+
+        <h2>CP violation</h2>
+
+        <p>To describe CP violation in the weak interaction, we have to look to the contribution Kobayashi and Maskawa in 1973<sup id="ref-1"><a href="#fn-1">[1]</a></sup>. At the time, quark mixing was suspected. That is, the state of the quark's field configuration which propagates (the "mass eigenstate") is distinct from the state of the quark's field configuration which actually interacts with the $W^{\pm}$ boson. For example, we could express $$\begin{bmatrix}\psi_d\\ \psi_s\end{bmatrix}_{\text{weak}}=\begin{bmatrix}V_{ud}&V_{us}\\V_{cd}&V_{cs}\end{bmatrix}\begin{bmatrix}\psi_d\\ \psi_s\end{bmatrix}_{\text{mass}}$$ mixing of the down and strange quarks.</p>
+
+        <p>Let's look at the Standard Model term that couples $W^{\pm}$ bosons to two quarks without considerations of mixing. Naïvely, it's just $$\mathcal L\supset\sum_{i}[\overline\psi^i_{u,L}\gamma^{\mu}\psi^i_{d,L}W_{\mu}^-+\overline\psi^i_{d,L}\gamma^{\mu}\psi^i_{u,L}W_{\mu}^+]$$ where the sum iterates over quark generations (so for instance, $\psi_u^3$ corresponds to the top quark), $L$ and $R$ denote left and right chiral fields respectively, $\gamma^{\mu}$ are Dirac matrices, and $\overline\psi\equiv\psi^{\dagger}\gamma^0$ are fermionic fields conjugated with a Dirac matrix.</p>
+
+        <p>This term is CP invariant as it stands. This is because the CP operations turns one of the two summands into the other. The $W$ charge flips, and the up and down switch. Why do they switch? Intuitively, note that the left term encodes the vertex $W^-\rightarrow d_L\overline u_R$. The only way to switch this vertex is to make the down antimatter and the up regular matter. This necessarily requires the down to be right handed and the up left handed since <em>the weak force only couples to left-handed matter and right-handed antimatter</em> (all handedness here refers to chirality, not helicity). This is the source of weak interaction P violation.</p>
+
+        <p>A clear way to have P violation here is to weight the terms by different coupling coefficient factors. Then, when we switch the terms by applying CP, the weights would effectively switch, and the physics would be different.</p>
+        
+        <p>The way we'll weight the terms differently is by incorporating quark mixing. Then, it becomes $$\mathcal L\supset\sum_{i,j}[\overline\psi^i_{u,L}\gamma^{\mu}V_{ij}\psi^j_{d,L}W_{\mu}^-+\overline\psi^j_{d,L}\gamma^{\mu}V_{ij}^*\psi^i_{u,L}W_{\mu}^+].$$</p>
+
+        <p>If those $V$ components were imaginary, we'd be golden, because then the $V$ coefficient would not be equal to its conjugate. Unfortunately, as it stands, the mixing matrix is too small (too few degrees of freedom) to guarantee the presence of complex elements. The mixing matrix must obviously be unitary, and in a two-by-two case there are four free real parameters. However, we can't use any of these to produce a complex element because, roughly speaking, the term is gauge invariant. The choice of quark phase has to be arbitrary, and any complex phase in the $V$ elements is liable to cancel out with it.</p>
+
+        <p>
+            Kobayashi and Maskawa saved the day in 1973 by proposing a third quark doublet, beyond the existing $(u,d)$ and $(c, s)$: <em>top and bottom</em> (or truth and beauty, though these terms have largely fallen out of use). Then, we have a three by three unitary matrix, which has nine degrees of freedom after imposing unitarity. Because there are so many degrees of freedom, the problem before does not tie up our hands: we are left with one phase that cannot be removed. That phase introduces complexity into the mixing matrix elements, which in turn violates CP.
+        </p>
+
+        <h2>The Wu Experiment</h2>
+
+        <p>
+            I'll briefly go over the actual experiment Wu and her colleagues performed that violated parity. They studied the nuclear process $^{60}_{27}\text{Co}\rightarrow^{60}_{28}\text{Ni}^*e^-\overline\nu_e$, and then the excited nickel relaxes and emits a couple photons. The superscript asterisk denotes an excited state of the atom. Clearly, the first process involves a proton decay, which is a weak process.
+        </p>
+
+        <p>
+            To start, the cobalt is placed in a magnetic field, and is cooled so that all its nuclear spins point in this direction. Note that a cobalt nucleus is spin-$5$, a nickel nucleus spin-$4$, and the electron and anti-neutrino are spin-$\frac12$. Let's consider only the case where the fermions come out moving in the direction of the magnetic field, and we treat the nickel as stationary since it's much more massive. The initial total angular momentum is $5$ due to the cobalt. There can be no final orbital angular momentum in the $z$ direction since that's the direction the particles are moving in, and the nickel nucleus is not moving. So in order to conserve total angular momentum all spins of the three products point in the same direction: $\frac12+\frac12+4=5$.
+        </p>
+
+        <p>
+            We can apply the parity operator to this experiment by flipping the direction of the current producing the magnetic field. When this is done, <em>the decay rate of the process is found to measurably change</em>! Thus, physics behaves different depending on the choice of parity. 
+        </p>
+
+        <h2>
+            Summary
+        </h2>
+
+        <p>
+            We started with a puzzle, trying to teach aliens the difference between left and right. Eventually, we thought we couldn't, but it turns out that there is a subtle violation of the symmetry between the two in nature that we could exploit. Thus, by carefully explaining the Wu experiment to aliens, we could tell them which hand was their right hand (if they had hands, I guess, which they almost certainly wouldn't). While this ability to distinguish parity is not practically useful, it has enormous philosophical implications for the univese itself.
+        </p>
+
+        <p>If God one day decided to flip the universe in a mirror, physicists could catch Him red-handed.</p>
+
+        <h3>Footnotes</h3>
+        <ol>
+                    <li id="fn-1">
+            Credit to Professor Michael Williams' Fall 2025 8.701 Introduction to Particle Physics, Lecture Notes for Lecture 11.
+            <a href="#ref-1">↩</a>
+        </li>
+        </ol>
+
+                <a href="../blog.html" class="back-link">&larr; Back to all posts</a>
+
+</div>
+    </article>
+
+</body>
+</html>
+
+<script>
+    // 1. Fetch the navbar.html file
+    fetch('../navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            // 2. Insert it into the placeholder div
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+</script>
