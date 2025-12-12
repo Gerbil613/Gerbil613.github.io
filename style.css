@@ -234,3 +234,26 @@ figcaption {
     display: block;                
     margin-top: 0.1rem;  
 }
+
+/* Wrapper to hold logo and subtitle side-by-side */
+.nav-brand {
+    display: flex;
+    align-items: center; /* Aligns them vertically */
+    gap: 1rem;           /* Space between logo and subtitle */
+}
+
+/* Styling for the subtitle text */
+.blog-subtitle {
+    font-size: 0.95rem;
+    color: #64748b;      /* A nice grey that complements your theme */
+    font-style: italic;
+    border-left: 2px solid #cbd5e1; /* Optional: adds a vertical divider line */
+    padding-left: 1rem;             /* Space between line and text */
+}
+
+/* IMPORTANT: Hide the subtitle on mobile so it doesn't crush your menu */
+@media (max-width: 768px) {
+    .blog-subtitle {
+        display: none;
+    }
+}
