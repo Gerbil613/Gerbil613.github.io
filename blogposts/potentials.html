@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where do Potentials Come From?</title>
+    <link rel="icon" type="image/png" href="../images/profile_pic.png">
+    <link rel="stylesheet" href="../style.css">
+    <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+
+    <article class="article-container">
+        <h1>Where do Potentials Come From?</h1>
+        <span class="date">December 18, 2025</span>
+
+        <h2>Classical regime</h2>
+
+        <p>Everyone learned in introductory high school physics that you can express <em>potentials</em> of a field. For example, the electric potential corresponding to the interaction between two charged particles is something like $$U(r)=\frac{-kq_1q_2}{r}.$$</p>
+
+        <p>When graphed against the distance between the two particles, we find a graph that looks like this:</p>
+
+        <figure>
+<img src="/images/classical_potential_graph.png" alt="Potential" class="post-img">
+<figcaption>Classical potential.</figcaption>
+</figure>
+
+<p>We can then imagine that a system that tries to minimize its energy will try to move to lower $r$ (think of a ball rolling down a hill). This means, in this case, the charges are attractive.</p>
+
+<p>But these ideas actually don't jibe well with relativity at all. If we suddenly jiggle one of the charges, does the field it sources update instantly? That can't be, because relativity does not allow information to travel faster than the speed of light as an axiom. As it happens, in this case of electric charges, Maxwell's equations tell us exactly how the field evolves. But that's only because Maxwell's equations are already relativistic in nature. What if we had two masses attracting each other (gravity obeys qualitatively the same potential law in Newtonian mechanics). If I jiggle a mass, how does gravity field update if it can't do so instantaneously? More generally, the potential depends on the distance between two particles. Under a Lorentz boost, that distance changes due to length contraction, changing presumably the potential difference. That's very annoying.</p>
+
+<p>This sort of reasoning might suggest that the very existence of a potential is merely a limiting case of a more general relativistic interaction. Indeed, the framework of quantum field theory proves to be a powerful tool in understanding this interaction. We will then use this tool to derive potentials for interactions besides the electromagnetic interaction, such as the weak and strong forces.</p>
+
+<h2>Feynman diagrams</h2>
+
+<p>It turns out that we can describe the electromagnetic interaction between the two charges (let's just say it's an electron and a positron) in terms of the <em>the exchange of a photon</em>, recalling that a photon is simply of quantum of electromagnetic field. But we'll have to be more precise about what we mean. We'll touch on some quantum field theory but brush nearly everything under the rug; I hope to post a better explainer of this in the near future.</p>
+
+<p>In this problem setting, we posit that we start with an initial state and end up at a final state. The initial state consists of an electron and a positron, and so does the final state. In quantum mechanics, we can ask the question: <em>what is the probability that, given the initial state, we end up at the final state</em>? Richard Feynman's key insight was, we can compute the answer to this question by summing up over all the different <em>paths</em> we can take from the initial state to the final state.</p>
+
+<p>What is a path here, you might ask? A path is, roughly speaking, a continuous list of configurations of the electromagnetic field over time. The initial configuration is the electromagnetic excited in exactly two points (in momentum space), and so is the final state.</p>
+
+<p>Feynman devised a list of rules, called <em>Feynman rules</em>, that allow us to go from a physical picture of what's going on to a probability amplitude. In our electron-positron interaction, the picture is simple:</p>
+
+        <figure>
+<img src="/images/e+e-feynman_scattering.png" alt="Feynman diagram" class="post-img">
+<figcaption>Feynman diagram of electron and positron scattering.</figcaption>
+</figure>
+
+<p>Note $q$ is the four-momentum of the virtual<sup id="ref-1"><a href="#fn-1">[1]</a></sup> photon being exchanged. If we followed the Feynman rules, we'd find that the transition amplitude is given by $$\mathcal M\propto \frac1{q^2-m^2},$$followed<sup id="ref-2"><a href="#fn-2">[2]</a></sup> by an ugly array of spinors and matrices that we can ignore for the purpose of this derivation since we only need to understand roughly how the amplitude scales with momentum. Beware: we are now working in natural units, so that $\hbar=c=1$.</p>
+
+<p>Here we suppose the photon has mass $m$ and will set it to 0 at the very end, but this way we can study the effects of massive boson mediators as well.</p>
+
+<p>Now we take the nonrelativistic limit. We can imagine this as saying that the photon travels instantaneously quickly relative to all other speeds. Another intuitive explanation is that the electron and positron have the same mass so they don't exchange energy in an elastic collision. If this were an electron scattering off a proton, we could say that the electron reverses direction and the proton maintains its direction since it's so much more massive, meaning no energy is exchanged there either. We could argue more generally that the energy exchange vanishes in the nonrelativistic limit for any two interacting particles like this, but we digress because this is an annoying argument and frankly I am not certain I understand it correctly. </p>
+    
+<p>We say the energy $q^0\ll|\vec q|$, meaning $q^2\approx-|\vec q|$, so $$\mathcal M\propto\frac{-1}{|\vec q|^2+m^2}.$$</p>
+
+<p>Now that we have an expression for a probability amplitude in momentum space, we can use something called the Born approximation to convert that into a potential.</p>
+
+<h2>Born approximation</h2>
+
+<p>The Born approximation is a technique in quantum mechanics where, starting with a potential of a quantum particle, we can find the scattering amplitude. It essentially involves Fourier transforming the potential, so here, we Fourier transform the Born approximation to pull back out this potential.</p>
+
+<p>Basically, in the Born approximation, $$\mathcal M(\vec q)\propto-\int \text d^3\vec r\exp(-i\vec q\cdot\vec r)U(\vec r),$$where $q$ is the momentum transfer between initial and final states. It's just a Fourier transform. We can invert it, giving $$U(\vec r)\propto-\int \text d^3\vec q\exp(i\vec q\cdot\vec r)\mathcal M(\vec q)=-\int \text d^3\vec q\frac{\exp(i\vec q\cdot\vec r)}{|\vec q|^2+m^2}.$$</p>
+
+<p>Through some clever spherical coordinate substitution and a Cauchy Theorem from complex analysis, this integral can be analytically performed. It comes out to $$U(\vec r)\propto\frac{\exp(-mr)}r.$$The coefficiencts of proportionality are of order 1 and we just ignore them.</p>
+
+<p>Now what happens when we require that the photon mass is 0? We end up with $$U(r)\propto\frac1 r.$$This is just Coulomb's law!</p>
+
+<h2>A little on the weak interaction</h2>
+
+<p>But look at what else we can glean from this derivation from the presence of the mass. It turns out that the weak interaction is mediated not by massless bosons like the photon, but by massive bosons such as the $W^{\pm}$ and $Z$ bosons. This means that, for instance, a nonrelativistic limit of a $Z$-mediated scattering interaction looks like $$\frac{\exp(-m_zr)}r.$$That pesky exponent is going to decay much faster than the normal Coulomb potential, especially since the $Z$ (and $W^{\pm}$) masses are <em>huge</em>&mdash;about 100 times larger than even the <em>proton</em>. <em>This explains why the weak force is weak</em>: the interaction is incredibly short-ranged and bottlenecked by its heavy mediators.</p>
+
+<h2>A little on the strong interaction</h2>
+
+<p>It turns out that the strong interaction (QCD) is mediated by massless bosons, like the electromagnetic interaction: the gluons. This would lead us to postulate a strong potential $1/r$ as well. However, it's a bit messier. The issue is that this whole perturbative approach that we have taken breaks down in QCD, specifically at <em>low</em> energies. By perturbative, I'm referring to the Feynman diagram methodology, where we only consider the simplest diagram and ignore the infinite, more complicated ones. If we scatter electrons with super high energy off a proton (which consists of gluon-mediated quarks), then the perturbative approach is basically valid, and this property of QCD is called <em>asymptotic freedom</em>. But if a proton and neutron lightly skim each other, it all goes to shit.</p>
+
+<p>
+    At higher distances, the strong force potential actually goes back <em>up</em>. The potential is traditionally modeled as something like $a/r+br$. QCD is more complicated than QED because the gluons carry the strong charge themselves (imagine if photons weren't neutral!). Roughly speaking, larger $r$ corresponds to lower energy due to the crude Planck relation $\lambda\propto1/E$. So in the larger $r$ regime, the Coulomb approximation breaks down.
+</p>
+
+<p>This property of the strong force is known as <em>confinement</em>: strongly-charged (color charged) entities are not found in isolation, because if you imagine separating two strongly-charged particles over sufficiently large distance into that linear-potential regime, it becomes more energetically favorable to just pop new quarks out of the vacuum in between. You can find quarks with net zero color charge in the wild (protons, neutrons, pions, kaons) but never a single quark sitting on its own.</p>
+
+                <a href="../blog.html" class="back-link">&larr; Back to all posts</a>
+    <h3>Footnotes</h3>
+    <ol>
+        <li id="fn-1">
+            We say <em>virtual</em> because we can't actually measure this photon&mdash;we can only measure the initial and final state. In the world of Feynman diagrams, virtual particles can do all sorts of crazy things, including temporarily violating energy conservation. However, it's not clear philosophically that they should be treated as real, physical entities, because in alternate field theory computational methods such as Lattice QCD, there is no need for them.
+            <a href="#ref-1">↩</a>
+        </li>
+                <li id="fn-2">
+            Note we have only included the <em>first-order</em> (tree-level) Feynman diagram of this scattering process. In principle, there are infinitely many diagrams of increasing complexity, involving more loops, virtual photons, fermions, etc. However, a useful property of quantum electrodynamics (the theory we are touching on here) is that higher-order diagrams contribute less and less to the scattering amplitude. This can be thought of as a Taylor expansion in which, for a sufficiently small deviation in a parameter (here this is the coupling constant of QED which is less than 1), the sum converges and the first term can be used as an approximation.
+            <a href="#ref-2">↩</a>
+        </li>
+    </ol>
+</div>
+    </article>
+    <footer>
+        <p>&copy; 2025 Matan Yablon. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<script>
+    // 1. Fetch blog_navbar navbar.html file
+    fetch('../blog_navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            // 2. Insert it into the placeholder div
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+</script>
