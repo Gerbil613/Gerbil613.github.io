@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Plato-Cicero Crossover</title>
+    <link rel="icon" type="image/png" href="../images/profile_pic.png">
+    <link rel="stylesheet" href="../style.css">
+    <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+
+    <article class="article-container">
+        <h1>A Plato-Cicero Crossover</h1>
+        <span class="date">December 18, 2025</span>
+
+        <p>I was reading through Cicero's treatise <em>De Senectute</em> once when I happened upon the following passage, involving an imagined interaction between Scipio and Cato.</p>
+
+                <blockquote>
+<p><b>SCIPIO</b>: Saepe numero admirari soleo cum hoc C. Laelio cum ceterarum rerum tuam excellentem, M. Cato, perfectamque sapientiam, tum vel maxime quod numquam tibi senectutem gravem esse senserim, quae plerisque senibus sic odiosa est, ut onus se Aetna gravius dicant sustinere.</p>
+
+<p><b>CATO</b>: Rem haud sane, Scipio et Laeli, difficilem admirari videmini. quibus enim nihil est in ipsis opis ad bene beateque vivendum, eis omnis aetas gravis est; qui autem omnia bona a se ipsi petunt, eis nihil potest malum videri quod naturae necessitas afferat. quo in genere est in primis senectus, quam ut adipiscantur omnes optant, eandem accusant adeptam ; tanta est stultitiae inconstantia atque perversitas. obrepere aiunt eam citius quam putassent. primum quis coegit eos falsum putare? qui enim citius adulescentiae senectus quam pueritiae adulescentia obrepit? deinde qui minus gravis esset eis senectus, si octingentesimum annum agerent, quam si octogesimum? praeterita enim aetas quamvis longa, cum effluxisset, nulla consolatione permulcere posset stultam senectutem. quocirca si sapientiam meam admirari soletis, quae utinam digna esset opinione vestra nostroque cognomine, in hoc sumus sapientes, quod naturam optimam ducem tamquam deum sequimur eique paremus; a qua non veri simile est, cum ceterae partes aetatis bene discriptae sint, extremum actum tamquam ab inerti poeta esse neglectum. sed tamen necesse fuit esse aliquid extremum et, tamquam in arborum bacis terraeque fructibus, maturitate tempestiva quasi vietum et caducum, quod ferendum est molliter sapienti. quid est enim aliud gigantum modo bellare cum dis nisi naturae repugnare?</p>
+
+<footer>M. T. Cicero, De Senectute IV</footer>
+</blockquote>
+                <blockquote>
+<p><b>SCIPIO</b>: I've become accustomed to admiring your excellent and perfect wisdom on this and other matters, M. Cato, along with C. Laelio. Indeed, I have felt that old age was never too heavy for you at all, even though to other elderly folk it is so loathsome, that they say the burden is heavier on them to bear than Mount Etna!</p>
+
+<p><b>CATO:</b> It's hardly a difficult thing, Scipio and Laeli, what you seem to be admiring. As for those who have nothing in their own affairs aimed towards living well and nicely, for <em>them</em> any age is heavy. However, as for him who seeks for himself all that is good, nothing which nature's necessity presents to him can be harmful. In this respect, old age is a prime example, as everyone wishes to reach it, and they deem it suitable. Such is the inconsistency and perveristy of their foolishness. They say it approaches them faster than they would have thought. First, who caused them to be under such a false impression? For whom is it the case that old age creeps up on adolescence faster than adolescence creeps up on boyhood? Then, those for whom old age is less oppressive, if they should reach their eighteenth year, </p>
+
+<footer>Translation supplied by me</footer>
+</blockquote>
+
+                <a href="../blog.html" class="back-link">&larr; Back to all posts</a>
+</div>
+    </article>
+    <footer>
+        <p>&copy; 2025 Matan Yablon. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<script>
+    // 1. Fetch blog_navbar navbar.html file
+    fetch('../blog_navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            // 2. Insert it into the placeholder div
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+</script>
