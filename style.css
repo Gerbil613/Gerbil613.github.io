@@ -257,3 +257,25 @@ figcaption {
         display: none;
     }
 }
+
+/* --- LIST STYLING INSIDE ARTICLES --- */
+
+/* Restores bullets/numbers and indentation */
+.article-container ul, 
+.article-container ol {
+    margin: 1.5rem 0;       /* Space above and below the list */
+    padding-left: 2rem;     /* Indentation for bullets */
+    line-height: 1.7;       /* Makes it readable */
+}
+
+/* Spaces out the individual items */
+.article-container li {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+/* Optional: Make nested lists (lists inside lists) look correct */
+.article-container ul ul,
+.article-container ol ol {
+    margin: 0.5rem 0;
+}
