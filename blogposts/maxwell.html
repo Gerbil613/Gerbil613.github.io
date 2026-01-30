@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where do Maxwell's equations come from?</title>
+    <link rel="icon" type="image/png" href="../images/profile_pic.png">
+    <link rel="stylesheet" href="../style.css">
+    <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+
+    <article class="article-container">
+        <h1>Where the Maxwell Equations Come From</h1>
+        <span class="date">January 29, 2026</span>
+
+        <p>In basically any introductory electromagnetism class, the Maxwell equations are presented as axiomatic. They are dumped on the chalkboard and taken as the starting point for any future calculations involving the electromagnetic field. Here, I'd like to derive them from first principles. To me, the fact that this is even possible is a testament to the unreasonable strength of our understanding of physics in modern times.</p>
+
+        <h2>Gauge symmetry</h2>
+        
+        <p>It turns out that the key concept underlying the Maxwell equation is <em>gauge symmetry</em>. In quantum mechanics, the wavefunction has a complex phase at everyone point. It is a fundamental property that the global phase in quantum mechanics is arbitrary. If the wavefunction were rotated by ninety degrees at every point in space, the physics would be the same. This is a global gauge symmetry.</p>
+
+        <p>In our case, we'll take this idea one step further, and require that the physics be invariant not just to global phase changes, but <em>local</em> phase change, where the angle may depend on the point in spacetime. This condition turns out to be enough to result in the Maxwell equations. Also, we aren't rotating wavefunctions in this case, but 4-component Dirac spinors which represent electrons and positrons.</p>
+
+        <p>So, let's take $\psi(x)\rightarrow e^{i\theta(x)}\psi(x)$. For the physics to remain the same, we need the Lagrangian (density) to remain the same<sup id="ref-1"><a href="#fn-1">[1]</a></sup>. The Lagrangian here can just be read off from the Dirac equation, so that the Euler-Lagrange equations of the Lagrangian spit out the Dirac equation. You can check for yourself: it's simply $$\mathcal L=\overline\psi(i\gamma^{\mu}\partial_{\mu}-m)\psi.$$</p>
+
+        <p>Now, if we just stick a complex phase into the spinors, the Lagrangian doesn't remain the same: $$
+            \begin{align*}
+            \mathcal L'&= e^{-i\theta(x)}\overline\psi(i\gamma^{\mu}\partial_{\mu}-m)\psi e^{i\theta(x)},\\
+            &= e^{-i\theta(x)}\overline\psi i\gamma^{\mu}\partial_{\mu}\psi e^{i\theta(x)}- e^{-i\theta(x)}\overline\psi m\psi e^{i\theta(x)},\\
+            &= e^{-i\theta(x)}\overline\psi i\gamma^{\mu}\partial_{\mu}\psi e^{i\theta(x)}- \overline\psi m\psi.
+            \end{align*}$$</p>
+
+        <p>The second term was invariant to our gauge transformation just fine, but the first one isn't, because the derivative operator doesn't necessarily commute with the position-dependent phase. Let's define $\lambda(x)\equiv-\theta(x)/q$. Then, we can express the changed Lagrangian as $$\mathcal L'=\mathcal L+q\partial_{\mu}\lambda\overline\psi\gamma^{\mu}\psi.$$</p>
+
+        <p>To fix this, let's Ansatz a new term in the Lagrangian as $$\mathcal L=\overline\psi(i\gamma^{\mu}\partial_{\mu}-m)\psi-q\overline\psi\gamma^{\mu}\psi A_{\mu},$$
+            
+        where we define a new four-vector $A_{\mu}$ that satisfies $$A_{\mu}'=A_{\mu}+\partial_{\mu}\lambda(x).$$</p>
+
+        <p>We see now that the new Lagrangian is invariant. The new term becomes $$-q(\overline\psi e^{-i\theta})\gamma^{\mu}(e^{i\theta}\psi)(A_{\mu}+\partial_{\mu}\lambda)=-q\overline\psi\gamma^{\mu}\psi A_{\mu}-q\overline{\psi}\gamma^{\mu}\psi\partial_{\mu}\lambda.$$The amount by which the term changes is the opposite of that by which the original Lagrangian changes, $q\partial_{\mu}\lambda\overline\psi\gamma^{\mu}\psi$.</p>
+        
+        <h2>Faraday Tensor</h2>
+        <p>Now, let's study the tensor $F_{\mu\nu}\equiv\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}$. Obviously it is antisymmetric. We can easily construct a Lorentz invariant Lagrangian as $$\mathcal L_A^{\text{free}}\propto F^{\mu\nu}F_{\mu\nu}.$$</p>
+
+        <p>The Euler-Lagrange equations here come out as $\partial_{\mu}\partial^{\mu}A^{\nu}=0$ if we choose the gauge (Lorenz gauge) that the four-divergence of $A$ is 0. We could also choose a different gauge, but this makes it easiest to see that the $A$ field obeys a Klein-Gordon (scalar) equation.</p>
+
+        <h2>Putting it all together: Inhomogeneous Maxwell Equations</h2>
+        <p>Now, we can insert our $A$ field into the Lagrangian to make it gauge invariant: $$\mathcal L=\overline\psi(i\gamma^{\mu}\partial_{\mu}-m)\psi-q\overline\psi\gamma^{\mu}\psi A_{\mu}-\frac14F^{\mu\nu}F_{\mu\nu}.$$ The $-\frac14$ is a convention that does not matter as it just scales the Faraday tensor. If we suggestively define $J^{\mu}=q\overline\psi\gamma^{\mu}\psi$ (so $\rho\equiv J^0$ and $\vec J\equiv J^i$), we have $\mathcal L=\overline\psi(i\gamma^{\mu}\partial_{\mu}-m)\psi-J^{\mu}A_{\mu}-\frac14F^{\mu\nu}F_{\mu\nu}.$</p>
+
+        <p>Now, let's look at the components $F^{0i}$, where Latin index $i>0$. $$
+                \begin{align*}
+                    F^{0i}&=\partial^0A^i-\partial^iA^0,\\
+                    &=\partial_t\vec A+\vec\nabla V,\\
+                    &\equiv\vec E.
+                \end{align*}
+            $$ We note that this just the definition of the electric field, if we say $A^0$ is the scalar potential and $\vec A$ the vector potential secretly the whole time!</p>
+
+        <p>We can dig up the magnetic field similarly by noticing $$\vec\nabla\times\vec A\equiv\vec B.$$The remaining elements of the tensor lie on the diagonal and are hence zero due to antisymmetry.</p>
+
+        <p>Now, we shall solve the Euler-Lagrange equations on this $A$ field to find their behavior, and we should expect to recover the Maxwell equations.
+            $$
+                \begin{align*}
+                    &\frac{\partial\mathcal L}{\partial A_{\nu}}=\partial_{\mu}\Big[\frac{\partial\mathcal L}{\partial(\partial_{\mu}A_{\nu})}\Big],\\
+                    &\boxed{J^{\nu}=\partial_{\mu}F^{\mu\nu}}.
+                \end{align*}
+            $$
+
+        This is the manifestly Lorentz invariant formulation of Maxwell's equations! We can open it up to recover the equations themselves.
+        </p>
+
+        <p>If we set the index $\nu=0$, the left hand side is $J^0=\rho$ and the right is $$\partial_{\mu}F^{\mu0}=\partial_{i}F^{i0}=\vec\nabla\cdot\vec E.$$So$$\boxed{\rho=\vec\nabla\cdot\vec E},$$ which is Gauss' Law in differential form!</p>
+
+        <p>If $\nu=i$, the equation becomes on the left $\partial_{\mu}F^{i\mu}$ and the right $J^i$. This is a three-dimensional vector equation, and it turns out the left hand side is just $\vec\nabla\times\vec B-\frac{\partial \vec E}{\partial t}$, so $\boxed{\vec\nabla\times\vec B-\frac{\partial \vec E}{\partial t}=\vec J}$. This is the Ampere-Maxwell Law.</p>
+
+        <h2>Putting it all together: Homogeneous Maxwell Equations</h2>
+
+
+        <p>Faraday's Law and Gauss' Law for Magnetism are homogeneous equations, so they do not result from this derivation. Rather, they come from considering the Bianchi identity (which we will not prove here) $$\partial_{\alpha}F_{\beta\gamma}+\partial_{\gamma}F_{\alpha\beta}+\partial_{\beta}F_{\gamma\alpha}=0.$$</p>
+
+        <p>Recall from earlier that $E_i=-F_{0i}$ and $B_k=-\frac12\varepsilon_{ikj}F^{ij}$. We consider the space indices $123$. In this reference frame, then, the Bianchi identity is $\partial_1F_{23}+\partial_2F_{31}+\partial_3F_{12}=0$.</p>
+
+        <p>Also, it can be shown from $B_k=-\frac12\varepsilon_{ikj}F^{ij}$ that $F_{ij}=\varepsilon_{ijk}B_k$. This immediately gives $\boxed{\vec\nabla\cdot\vec B=0}$.</p>
+
+        <p>Finally, Faraday's Law. If we let the index $\lambda=0$, $$
+            \begin{align*}
+                \partial_0F_{ij}+\partial_jF_{0i}+\partial_iF_{j0}&=0,\\
+                \partial_t(-\varepsilon_{ijk}B_k)+\partial_i(E_j)+\partial_j(-E_i)&=0,\\
+                -\varepsilon_{ijk}\frac{\partial B_k}{\partial t}+(\partial_iE_j-\partial_jE_i)&=0,\\
+                \boxed{\frac{\partial\vec B}{\partial t}+\vec\nabla\times\vec E=0}.
+            \end{align*}
+            
+        $$</p>
+
+        <p>All in all, we see that the behavior of the electromagnetic field and its coupling to charge is a direct consequence of gauge invariance.</p>
+
+
+                <a href="../blog.html" class="back-link">&larr; Back to all posts</a>
+
+                
+<hr>
+        <h3>Footnotes</h3>
+    <ol>
+        <li id="fn-1">
+            Technically we only need the action to remain the same, which we recall is defined as the integral of an exponential of the Lagrangian density over spacetime. 
+            <a href="#ref-1">↩</a>
+        </li>
+    </ol>
+
+</div>
+    </article>
+    <footer>
+        <p>&copy; 2025 Matan Yablon. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<script>
+    // 1. Fetch blog_navbar navbar.html file
+    fetch('../blog_navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            // 2. Insert it into the placeholder div
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+</script>
