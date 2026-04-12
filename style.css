@@ -399,10 +399,6 @@ blockquote p:last-of-type {
     margin-bottom: 0;
 }
 
-blockquote footer::before {
-    content: "— ";
-}
-
 /* Styles for images INSIDE actual blog posts (not thumbnails) */
 .post-img {
     max-width: 100%;
