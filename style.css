@@ -163,6 +163,19 @@ nav {
 
 /* --- 5. BLOG PAGE & POST STYLES --- */
 
+/* Intro blurb above the "Latest Articles" heading */
+.blog-intro {
+    max-width: 65ch;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.container>h1 {
+    color: var(--dark-color);
+    margin-bottom: 2rem;
+}
+
 .blog-post {
     display: flex;
     /* Enables side-by-side layout */
