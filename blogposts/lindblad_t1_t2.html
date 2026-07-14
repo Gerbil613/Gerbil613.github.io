@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lindblad Equation and T1/T2 Decay</title>
+    <link rel="icon" type="image/png" href="../images/profile_pic.png">
+    <link rel="stylesheet" href="../style.css">
+    <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+
+    <article class="article-container">
+        <h1>The Lindblad Equation and T1/T2 Decay</h1>
+        <span class="date">June 30, 2026</span>
+
+        <p>The Schrödinger equation describes the unitary evolution of the wavefunction. But how do we describe a quantum system that si subject to non-unitary thermodynamic effects? For example, what happens when a qubit couples to a thermal bath? The Lindblad equation allows us to answer this question.</p>
+
+        <h2>
+          The density matrix
+        </h2>
+
+        <p>
+          We first need a way to describe a thermal ensemble of quantum states. This is traditionally done with the <em>density matrix</em> $\rho$. For an ensemble of quantum states $\{|\psi_i\rangle\}$, the density matrix is defined as $$\rho\equiv\sum_i|\psi_i\rangle\langle\psi_i|.$$
+
+        </p>
+
+        <p>
+          The off-diagonal terms represent the "coherence" of the ensemble. If they go to zero, the matrix is equivalent to $\alpha|0\rangle\langle0|+\beta|1\rangle\langle1|$ &mdash; a thermodynamic mix between the two eigenstates. There is much else to be said about this object, but for this post we digress.
+        </p>
+
+        <h2>
+          The Lindblad equation
+        </h2>
+
+        <p>
+          The Lindblad equation states $$\dot\rho=-\frac i{\hbar}[H, \rho]+\sum_i\gamma_i\Big(L_i\rho L_i-\frac12\{L_i^{\dagger}L_i,\rho\}\Big)$$
+        </p>
+
+        <p>
+          I won't go into the full derivation since it's too involved, but the intuition is that the first commutator term represents the coherent, unitary evolution. The sum of terms involving $L_i$ (called the Lindbladian operator) represent various means of nonunitary action. In general, they can also represent measurement, but for our purposes, we will consider three Lindbladians:
+        </p>
+
+        <ul>
+          <li>Excitation $L_{\uparrow}=\gamma_{\uparrow}|1\rangle\langle0|$</li>
+          <li>Relaxation $L_{\downarrow}=\gamma_{\downarrow}|0\rangle\langle1|$</li>
+          <li>Dephasing $L_{\phi}=\gamma_{\phi}(|1\rangle\langle1|-|0\rangle\langle0|)$</li>
+        </ul>
+
+        <p>Intuitively, you can see that the $L_{\uparrow}$ operating on a quantum state will turn $|0\rangle$ into $|1\rangle$, and $L_{\downarrow}$ vice versa. These two operators represent the thermal tendency to exchange heat randomly with the environment, either by emitting or absorbing a photon.</p>
+        
+        <p>For $L_{\phi}$, one sees that it leaves a quantum state unchanged except it adds a phase of $\pi$ to the $|0\rangle$. If we look on the Bloch sphere, this has the effect $\varphi\rightarrow\varphi+\pi$. If we imagine following many quantum trajectories subjected to this operation at random times, and average these trajectories together, the arrow on the Bloch sphere will converge to the vertical axis, losing the phase information around the azimuth. This is why this effect is known as dephasing.</p>
+
+        <h2>T1/T2 Decay</h2>
+
+        <p>If we solve out the Lindblad equation using some linear algebra (I don't feel like writing it out, it's getting late), the populations and the coherences decouple, and we end up with the result $$\rho_{11}(t)=\rho_{11}(\infty)+\big(\rho_{11}(0)-\rho_{11}(\infty)\big)\exp(-t/T_1)$$ $$\rho_{01}(t)=\rho_{01}(0)\exp(-i\omega t)\exp(-t/T_2)$$ where $$\frac1{T_1}=\gamma_{\uparrow}+\gamma_{\downarrow},\qquad \frac1{T_2}=\frac1{2T_1}+2\gamma_{\phi},\qquad \rho_{11}(\infty)=\frac{\gamma_{\uparrow}}{\gamma_{\uparrow}+\gamma_{\downarrow}}.$$</p>
+
+        <p>So the diagonal relaxes to a thermal equilibrium set purely by the ratio of the excitation and relaxation rates, at a rate $1/T_1$ set by their sum, while the off-diagonal coherence spirals in to zero at a rate $1/T_2$. The two are not independent: any energy exchange with the bath necessarily scrambles the phase as well, which is why $1/T_1$ shows up (halved) inside $1/T_2$. Pure dephasing then adds on top of that, so we always have $T_2\leq 2T_1$: a qubit can lose its phase much faster than it loses its energy, but never the other way around.</p>
+
+        <p>This is why $T_1$ and $T_2$ are the two numbers everyone quotes when they benchmark a qubit: between them, they capture essentially everything the environment does to a two-level system in the Markovian limit.</p>
+
+        <a href="../blog" class="back-link">&larr; Back to all posts</a>
+
+    </article>
+    <footer>
+        <p>&copy; 2025 Matan Yablon. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<script>
+    // 1. Fetch blog_navbar navbar file
+    fetch('../blog_navbar')
+        .then(response => response.text())
+        .then(data => {
+            // 2. Insert it into the placeholder div
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+</script>
