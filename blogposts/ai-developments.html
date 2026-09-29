@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On Recent AI Developments</title>
+    <link rel="icon" type="image/png" href="../images/profile_pic.png">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&display=swap&subset=latin,latin-ext,greek,greek-ext" rel="stylesheet">
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+    <article class="article-container">
+        <h1>On Recent AI Developments</h1>
+        <span class="date">September 28, 2026</span>
+
+        <p>Thus far, this blog hasn’t had much personal commentary, but given how interesting things have become in the last several months, that convention will be waived temporarily.</p>
+        
+        <p>Ever since we were born, people of my age had it hammered into us that STEM education was the way to secure our future. The logic was that in a 21st-century economy, STEM expertise was the objective and meritocratic driver behind progress. Doctors want a capsid that can deliver antibodies into the body? Biomedical engineering experts could tackle it, and get paid doing so. An internet company wants to quickly and losslessly transmit information over long distances? Optical engineers can help, but for a fee. Archaeologists want to scan for hidden rooms in ancient pyramids that aren’t accessible from the outside? Physicists will sell you a muon scanning device that will get the job done. Ingenuity came with a price tag.</p>
+
+        <p>This formula was all but certain to continue well on into the future, making the advice seem rock-solid and dependable. Individuals with knowledge of STEM were bound to be successful.</p>
+
+        <p>But there is one variable this perspective fails to take into account, and it’s one I largely neglected till this past summer: what if you could make a machine “do the STEM” without need for a human? I opine that this outcome would shatter the value proposition of human education in STEM and upend the existing consensus that has slowly formed since the scientific revolution.</p>
+
+        <h2>What Changed</h2>
+
+        <p>When ChatGPT first came out in late 2022 and it was all the rave, I (and many others) viewed it as nothing more than a curiosity. It could generate fun little poems and shoddy essays, but not more than that. A couple years later, I found AI useful for generating boilerplate Python code that I didn’t want to write myself. Useful, sure. But not groundbreaking. Just another tool. Just another rung on the long ladder of inventions.</p>
+        
+        <p>But it all changed this past summer. In coding with the latest models, the project I worked on forced me to realize that they were no longer merely “tools.” They were interns, partners, equals, agents. They could write boilerplate code, sure, but they could also generate a whole physics simulation from scratch based on an English description in a paper. A task that would normally be entrusted to a student intern like me, and take days to complete. The new models could do it in seconds. When I reached out to my friends of similar age working across various domains, they had the same story. Whether it was quantitative research on Wall Street, PCB design, experimental physics, or theoretical computer science, AI had become the chief force supporting their research.</p>
+
+        <p>More broadly, people working across the economy in STEM have collectively begun to wake up, and I believe this happened starting in the spring. People realized that the coding abilities of the AI models matched those of junior-level engineers, and exceeded them in many respects, especially the ability to process large libraries of code quickly (of course).</p>
+
+        <h2>Proofs</h2>
+
+        <p>Aside from my own work, it became clear that something interesting was happening when AI started proving open math problems. Despite starting off unable to do grade-school math, AI gradually acquired the ability to pass AP exams, then AIME exams, then score perfectly at IMO. At each step, many dismissed it as a meaningless benchmark, and that the AIs could only solve the problems because similar ones existed in the training data. The models weren’t truly thinking like people.</p>
+
+        <p>Now that AI is solving open math problems such as Navier-Stokes or the Jacobian conjecture (with more coming down the pipe if OpenAI is to be believed), the new excuse is that AI can only come up with counterexamples. It can search large databases of existing mathematics and string ideas together in ways humans didn’t notice before, but it cannot come up with truly new mathematics. It cannot create new theories. For that, you need the quintessential “human ingenuity,” creativity, whatever that even means at this point. Given the trajectory since 2022 (and before), I think there is strong reason to believe that this barrier, too, shall fall, and we shall see full automation of non-physical STEM research within a decade. But for the sake of my academic training thus far, part of me hopes the doubters are right.</p>
+
+        <a href="../blog" class="back-link">&larr; Back to all posts</a>
+</div>
+
+    </article>
+    <footer>
+        <p>&copy; 2026 Matan Yablon. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<script>
+    // 1. Fetch the navbar file
+    fetch('../blog_navbar')
+        .then(response => response.text())
+        .then(data => {
+            // 2. Insert it into the placeholder div
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+</script>
