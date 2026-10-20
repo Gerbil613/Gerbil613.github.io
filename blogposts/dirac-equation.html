@@ -33,7 +33,7 @@
 
         $$i\frac{\partial\psi}{\partial t}=\hat H \psi.$$
 
-        <p>That's all well and good, but what if we try to incorporate Einstein's special relativity into the fold? Can the Schrödinger equation consistently accomodate quantum particles moving at relativistic velocities? In that case, we need to enforce Lorentz invariance: all laws of physics must appear the same regardless of inertial reference frame. For the Schrödinger equation, we note immediately that space and time are on different "footing," so to speak. Time is under a first derivative, while space is under a second derivative, as the Hamiltonian of, say, a particle in a potential is $\hat H=-\frac{\hbar^2}{2m}\nabla^2+V(\vec x)$.</p>
+        <p>That's all well and good, but what if we try to incorporate Einstein's special relativity into the fold? Can the Schrödinger equation consistently accommodate quantum particles moving at relativistic velocities? In that case, we need to enforce Lorentz invariance: all laws of physics must appear the same regardless of inertial reference frame. For the Schrödinger equation, we note immediately that space and time are on different "footing," so to speak. Time is under a first derivative, while space is under a second derivative, as the Hamiltonian of, say, a particle in a potential is $\hat H=-\frac{\hbar^2}{2m}\nabla^2+V(\vec x)$.</p>
 
         <p>
             Indeed, we can show more conclusively the lack of Lorentz invariance of the Schrödinger equation as follows. Suppose we exist only in the $x$-direction with no potential, and apply a Lorentz boost in that direction. We henceforth use natural units where $\hbar=c=1$. Starting with $$i\frac{\partial\psi}{\partial t}=-\frac{1}{2m}\frac{\partial^2\psi}{\partial x^2},$$ we apply a Lorentz boost $$\Lambda=\begin{bmatrix}\gamma & -\gamma v \\ -\gamma v & \gamma\end{bmatrix}$$where $\gamma=1/\sqrt{1-v^2}$ is the boost's Lorentz factor.
@@ -77,7 +77,7 @@
             Starting with the result from special relativity that $m^2=E^2+|\vec p|^2$, or $E^2-|\vec\ p|^2-m^2=p^{\mu}p_{\mu}-m^2=0$, we factor this equation as $(\beta^{\kappa}p_{\kappa}+m)(\gamma^{\lambda}p_{\lambda}-m)=0.$ If we just assumed $\beta^{\kappa}$ and $\gamma^{\lambda}$ were numbers, we'd run into contradictions pretty quickly. It can be shown that $\gamma^{\kappa}=\beta^{\kappa}$ and that $\{\gamma^{\mu},\gamma^{\nu}\}=2g^{\mu\nu}\mathbb{I}$, where $g$ is the metric tensor from relativity, $\mathbb I$ is the abstract linear identity operator, and $\{A,B\}\equiv AB+BA$ denotes anticommutation.
         </p>
             
-        <p>It turns out the simplest mathematical object that can satisfy these relations are four-by-four matrices. The representations of these matrices are not unique, and in the "chiral representation" they are chosen as $$\begin{align*}\gamma^0&=\begin{bmatrix}0 & \mathbb{I} \\ \mathbb{I} &0\end{bmatrix},\\
+        <p>It turns out the simplest mathematical objects that can satisfy these relations are four-by-four matrices. The representations of these matrices are not unique, and in the "chiral representation" they are chosen as $$\begin{align*}\gamma^0&=\begin{bmatrix}0 & \mathbb{I} \\ \mathbb{I} &0\end{bmatrix},\\
             \gamma^i&=\begin{bmatrix}0 & \sigma_i \\ -\sigma_i &0\end{bmatrix}\end{align*},$$ for $i\in\{1,2,3\}$, and $\sigma_i$ being the famed Pauli matrices.
         </p>
 

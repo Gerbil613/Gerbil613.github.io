@@ -29,7 +29,7 @@
 
         <h2>A puzzle</h2>
 
-        <p>Let's start off with a thought experiment, adapted from the epic Feynman Lectures. Or perhaps more accurately, a puzzle. Suppose you are communicating with aliens from outer space. You cannot see them and they cannot see you; they can only send you verbal messages and vice versa. They have developed the same scientific progress as us, so they know chemistry, physics, etc. Here's your challenge: <em>can you explain to them which way is right and which way is left?</em></p>
+        <p>Let's start off with a thought experiment, adapted from the epic Feynman Lectures. Or perhaps more accurately, a puzzle. Suppose you are communicating with aliens from outer space. You cannot see them and they cannot see you; they can only send you verbal messages and vice versa. They have made the same scientific progress as us, so they know chemistry, physics, etc. Here's your challenge: <em>can you explain to them which way is right and which way is left?</em></p>
 
         <p>
             After thinking about it for five or so seconds, you realize it's nontrivial. The aliens don't have the same conventions we do; you cannot simply refer to a "right" hand, for example. But the aliens know physics! So maybe you try to exploit something there. You recall the right-hand-rules for electromagnetism. You try telling the alien to run current down a wire, away from yourself. You know by the right-hand rule that the $\vec B$ field on top of the wire points to the right. So the alien just needs to measure this $\vec B$ field, and you're done! Right?
@@ -53,10 +53,10 @@
 
         <p>The answer until 1956 was <em>no</em>. The problem has to do with something called <em>parity</em> symmetry in physics. The parity operation is defined as inverting an odd (one or three) number of spatial dimensions. For instance, if we perform a parity operation, all velocities flip. Electric fields $\vec E$ also flip. But get this: $\vec B$ fields <em>don't</em>. They are totally invariant to parity operations, so they are said to have parity eigenvalue $1$ (in contrast to $-1$). This feature is what makes them definitionally <em>pseudovectors</em> or <em>axial vectors.</em></p>
 
-        <p>Until 1956, it was thought (with good, nay, excellent reason) that the laws of physics obeyed parity symmetry. That is, if a parity operation was applied on the universe, the laws of physics would remain unchanged. This would be a result of the fact that all laws of physics consist of equations such that each equation exclusively involves vectors or exclusively involves pseudovectors. Thus, under parity, vector equations would get a negative sign on both sides, which would cancel out, and the pseudovector equations remain the same as well. Indeed, any classical law you can think of, ranging from Newton's laws of motion to Maxwell's equations, exhibit parity symmetry.</p>
+        <p>Until 1956, it was thought (with good, nay, excellent reason) that the laws of physics obeyed parity symmetry. That is, if a parity operation was applied on the universe, the laws of physics would remain unchanged. This would be a result of the fact that all laws of physics consist of equations such that each equation exclusively involves vectors or exclusively involves pseudovectors. Thus, under parity, vector equations would get a negative sign on both sides, which would cancel out, and the pseudovector equations remain the same as well. Indeed, any classical law you can think of, ranging from Newton's laws of motion to Maxwell's equations, exhibits parity symmetry.</p>
 
         <p>
-            In 1956, the Wu experiment changed all that. Chien-Shiung Wu led an experiment at the National Bureau of Standards which found an experiment that violated parity symmetry. But what were the new laws of physics that didn't obey parity?
+            In 1956, the Wu experiment changed all that. Chien-Shiung Wu led an experiment at the National Bureau of Standards that demonstrated a violation of parity symmetry. But what were the new laws of physics that didn't obey parity?
         </p>
 
         <h2>The Weak Interaction and parity violation</h2>
@@ -67,11 +67,11 @@
 
         <h2>CP violation</h2>
 
-        <p>To describe CP violation in the weak interaction, we have to look to the contribution Kobayashi and Maskawa in 1973<sup id="ref-1"><a href="#fn-1">[1]</a></sup>. At the time, quark mixing was suspected. That is, the state of the quark's field configuration which propagates (the "mass eigenstate") is distinct from the state of the quark's field configuration which actually interacts with the $W^{\pm}$ boson. For example, we could express $$\begin{bmatrix}\psi_d\\ \psi_s\end{bmatrix}_{\text{weak}}=\begin{bmatrix}V_{ud}&V_{us}\\V_{cd}&V_{cs}\end{bmatrix}\begin{bmatrix}\psi_d\\ \psi_s\end{bmatrix}_{\text{mass}},$$ mixing the down and strange quarks.</p>
+        <p>To describe CP violation in the weak interaction, we have to look to the contribution of Kobayashi and Maskawa in 1973<sup id="ref-1"><a href="#fn-1">[1]</a></sup>. At the time, quark mixing was suspected. That is, the state of the quark's field configuration which propagates (the "mass eigenstate") is distinct from the state of the quark's field configuration which actually interacts with the $W^{\pm}$ boson. For example, we could express $$\begin{bmatrix}\psi_d\\ \psi_s\end{bmatrix}_{\text{weak}}=\begin{bmatrix}V_{ud}&V_{us}\\V_{cd}&V_{cs}\end{bmatrix}\begin{bmatrix}\psi_d\\ \psi_s\end{bmatrix}_{\text{mass}},$$ mixing the down and strange quarks.</p>
 
         <p>Let's look at the Standard Model term that couples $W^{\pm}$ bosons to two quarks without considerations of mixing. Naïvely, it's just $$\mathcal L\supset\sum_{i}[\overline\psi^i_{u,L}\gamma^{\mu}\psi^i_{d,L}W_{\mu}^-+\overline\psi^i_{d,L}\gamma^{\mu}\psi^i_{u,L}W_{\mu}^+]$$ where the sum iterates over quark generations (so for instance, $\psi_u^3$ corresponds to the top quark), $L$ and $R$ denote left and right chiral fields respectively, $\gamma^{\mu}$ are Dirac matrices, and $\overline\psi\equiv\psi^{\dagger}\gamma^0$ are fermionic fields conjugated with a Dirac matrix.</p>
 
-        <p>This term is CP invariant as it stands. This is because the CP operations turns one of the two summands into the other. The $W$ charge flips, and the up and down switch. Why do they switch? Intuitively, note that the left term encodes the vertex $W^-\rightarrow d_L\overline u_R$. The only way to switch this vertex is to make the down antimatter and the up regular matter. This necessarily requires the down to be right handed and the up left handed since <em>the weak force only couples to left-handed matter and right-handed antimatter</em> (Chirality is approximately related to, though not identical to in the case of massive particles, the projection of the spin operator onto momentum. If they align, it's right handed, and if not, left handed. Technically what I just described is a distinct property called helicity, but for our purposes this is all I'll say for now). This property of the weak interaction is the source of weak interaction P violation.</p>
+        <p>This term is CP invariant as it stands. This is because the CP operation turns one of the two summands into the other. The $W$ charge flips, and the up and down switch. Why do they switch? Intuitively, note that the left term encodes the vertex $W^-\rightarrow d_L\overline u_R$. The only way to switch this vertex is to make the down antimatter and the up regular matter. This necessarily requires the down to be right handed and the up left handed since <em>the weak force only couples to left-handed matter and right-handed antimatter</em> (Chirality is approximately related to, though not identical to in the case of massive particles, the projection of the spin operator onto momentum. If they align, it's right handed, and if not, left handed. Technically what I just described is a distinct property called helicity, but for our purposes this is all I'll say for now). This property of the weak interaction is the source of weak interaction P violation.</p>
 
         <p>A clear way to have CP violation here is to weight the terms by different coupling coefficient factors. Then, when we switch the terms by applying CP, the weights would effectively switch, and the physics would be different.</p>
         
@@ -94,7 +94,7 @@
         </p>
 
         <p>
-            We can apply the parity operator to this experiment by flipping the direction of the current producing the magnetic field. When this is done, <em>the decay rate of the process is found to measurably change</em>! Thus, physics behaves different depending on the choice of parity. 
+            We can apply the parity operator to this experiment by flipping the direction of the current producing the magnetic field. When this is done, <em>the decay rate of the process is found to measurably change</em>! Thus, physics behaves differently depending on the choice of parity.
         </p>
 
         <h2>
@@ -102,7 +102,7 @@
         </h2>
 
         <p>
-            We started with a puzzle, trying to teach aliens the difference between left and right. Eventually, we thought we couldn't, but it turns out that there is a subtle violation of the symmetry between the two in nature that we could exploit. Thus, by carefully explaining the Wu experiment to aliens, we could tell them which hand was their right hand (if they had hands, I guess, which they almost certainly wouldn't). While this ability to distinguish parity is not practically useful, it has enormous philosophical implications for the univese itself.
+            We started with a puzzle, trying to teach aliens the difference between left and right. Eventually, we thought we couldn't, but it turns out that there is a subtle violation of the symmetry between the two in nature that we could exploit. Thus, by carefully explaining the Wu experiment to aliens, we could tell them which hand was their right hand (if they had hands, I guess, which they almost certainly wouldn't). While this ability to distinguish parity is not practically useful, it has enormous philosophical implications for the universe itself.
         </p>
 
         <p>If God decided one day to flip the universe in a mirror, physicists could catch Him red-handed.</p>
