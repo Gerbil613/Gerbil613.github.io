@@ -25,7 +25,8 @@ body {
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: var(--dark-color);
+    font-weight: 700;
 }
 
 /* --- 2. NAVIGATION (Sticky) --- */
