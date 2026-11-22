@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On Recent AI Developments</title>
+    <link rel="icon" type="image/png" href="../images/profile_pic.png">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&display=swap&subset=latin,latin-ext,greek,greek-ext" rel="stylesheet">
+    <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+  };
+</script>
+</head>
+<body>
+    <script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<div id="navbar-placeholder"></div>
+    <article class="article-container">
+        <h1>More Unexpected Advances</h1>
+        <span class="date">November 21, 2026</span>
+
+        <p>Welp.</p>
+
+        <p>That escalated more quickly than even I expected, but I guess my previous blogpost on this topic was more prescient than I first realized.</p>
+
+        <p>Yesterday, Levent Alpöge, a mathematician who works for Anthropic and is known for past landmark AI-powered math results such as the disproof of the Jacobian conjecture, <a href="https://alpo.ge/remark.pdf">announced</a> that he had a proof of the (Generalized!) Riemann Hypothesis. He clarified that this was a joint effort between himself and an internal Claude model&mdash;rather than simply asking the model for a proof, he guided it over several weeks using his mathematical expertise (Alpöge holds a PhD in math).</p>
+
+        <p>The proof is only available as millions of lines of Lean; Alpöge claimed that the natural language proof exceeded 250,000 pages and did not bother publishing it. As of Saturday evening, the proof has been <a href="https://math.mit.edu/~drew/grh/">independently</a> <a href="https://leanprover-community.github.io/blog/posts/riemann-hypothesis/">verified</a> in Lean.</p>
+
+        <blockquote cite="https://scottaaronson.blog/?p=10344">
+            <p>The proof has now been verified independently by the Lean community, using con-leche, a piece of Lean that itself is formally verified all the way down to the axioms of set theory. This is a much higher degree of verification than a typical human paper accepted to a math journal. The proof is correct.</p>
+            <footer>&mdash; <a href="https://scottaaronson.blog/?p=10344">Scott Aaronson</a></footer>
+        </blockquote>
+
+        <p>It is too early to tell the methodologies used in this gargantuan proof. For now, we only know that the conjecture is true.</p>
+
+        <h2>Impacts</h2>
+
+        <p>The Riemann Hypothesis was the crown jewel open problem of modern mathematics. Indeed, the consensus among experts in the field was that we were <em>decades</em> away from its resolution, even with AI assistance. It was expected that a whole new branch of math would need to be invented wholesale. Obviously, it is a Millenium Prize Problem.</p>
+
+        <p>One of the most interesting implications of the hypothesis is on the distribution of prime numbers. If $\pi(x)$ is the number of primes less than or equal to $x$, it was previously known that, for some positive $c$, $$\pi(x)=\text{li}(x)+O(x\exp\Big[-c\frac{(\log x)^{3/5}}{(\log\log x)^{1/5}}\Big]),$$ where li is the logarithmic integral.</p>
+
+        <p>Because RH is true, we know $$\pi(x)=\text{li}(x)+O(\sqrt x\log x).$$</p>
+
+        <h2>Looking Back</h2>
+
+        <p>At this point, it might be nice to catalog all the significant mathematical results from AI over the past year. Since even Navier-Stokes, a lot has gone down:</p>
+
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th scope="col">Problem</th>
+                    <th scope="col">Identity of solver</th>
+                    <th scope="col">Date of solution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Unit Distance Conjecture</td>
+                    <td>OpenAI</td>
+                    <td>May 20</td>
+                </tr>
+                <tr>
+                    <td>Jacobian Conjecture</td>
+                    <td>Anthropic</td>
+                    <td>July 20</td>
+                </tr>
+                <tr>
+                    <td>Ten Theorems</td>
+                    <td>OpenAI</td>
+                    <td>August 1</td>
+                </tr>
+                <tr>
+                    <td>More than two-thirds of zeros on critical line</td>
+                    <td>Anthropic</td>
+                    <td>August 10</td>
+                </tr>
+                <tr>
+                    <td>Fermat's Last Theorem formalized</td>
+                    <td>Anthropic</td>
+                    <td>September 4</td>
+                </tr>
+                <tr>
+                    <td>Forced Navier-Stokes Blowup</td>
+                    <td>OpenAI</td>
+                    <td>September 8</td>
+                </tr>
+                <tr>
+                    <td>3SUM and APSP Hypotheses</td>
+                    <td>Anthropic</td>
+                    <td>October 5</td>
+                </tr>
+                <tr>
+                    <td>Quasi-Riemann Hypothesis; Unique Games Conjecture; L=RL; Matrix multiplication exponent $\omega<9/4$; etc.</td>
+                    <td>OpenAI</td>
+                    <td>October 6</td>
+                </tr>
+                <tr>
+                    <td>Exponential Time Hypothesis</td>
+                    <td>OpenAI</td>
+                    <td>October 26</td>
+                </tr>
+                <tr>
+                    <td>Yang-Mills Existence</td>
+                    <td>OpenAI</td>
+                    <td>October 26</td>
+                </tr>
+                <tr>
+                    <td>Unforced Navier-Stokes Blowup</td>
+                    <td>Anthropic</td>
+                    <td>November 20</td>
+                </tr>
+                <tr>
+                    <td>Riemann Hypothesis/GRH</td>
+                    <td>Anthropic</td>
+                    <td>November 20</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>It's safe to say that we can't know what will happen next at this point. What's certain is, the old conception of what made math problems "hard" is simply no longer relevant, as AI systems are so much better at solving such problems that humans.</p>
+
+        <p><em>Le roy est mort, vive le roy!</em></p>
+
+        <a href="../blog" class="back-link">&larr; Back to all posts</a>
+</div>
+
+    </article>
+    <footer>
+        <p>&copy; 2026 Matan Yablon. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<script>
+    // 1. Fetch the navbar file
+    fetch('../blog_navbar')
+        .then(response => response.text())
+        .then(data => {
+            // 2. Insert it into the placeholder div
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+</script>

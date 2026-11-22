@@ -275,6 +275,28 @@ nav {
     font-size: 1.1rem;
 }
 
+.results-table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+}
+
+.results-table th,
+.results-table td {
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.results-table th {
+    background-color: var(--light-bg);
+    color: var(--dark-color);
+}
+
+.results-table td {
+    height: 3rem;
+}
+
 .back-link {
     display: inline-block;
     margin-top: 2rem;
